@@ -32,6 +32,9 @@ class App extends Component{
           <Route path="/" exact component = {HomePage}/>
           <Route path="/about" exact component = {AboutPage}/>
           <Route path="/users" exact component = {UsersPage}/>
+          <Route path="/users/:userid" exact component = {({match})=>{
+              return <h1>Hello user {match.params.userid}</h1>
+          }}/>
           <Route path="/news" exact component = {NewsPage}/>
           <Route component = {NotFoundPage}/>
         </Switch>
