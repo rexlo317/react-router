@@ -3,6 +3,9 @@ import { Switch, Link, Route } from "react-router-dom";
 import './App.css';
 import AboutPage from './components/AboutPage'
 import NotFoundPage from './components/NotFoundPage'
+import UsersPage from './components/UsersPage'
+import HomePage from './components/HomePage'
+import NewsPage from './components/NewsPage'
 
 class App extends Component{
   render(){
@@ -17,16 +20,19 @@ class App extends Component{
               <Link to="/users">users</Link>
             </li>
             <li>
+              <Link to="/news">news</Link>
+            </li>
+            <li>
               <Link to="/">home</Link>
             </li>
           </ul>
         </nav>
         <hr/>
         <Switch>
-          <Route path="/" exact component = {(<h1>home page</h1>)}/>
+          <Route path="/" exact component = {HomePage}/>
           <Route path="/about" exact component = {AboutPage}/>
-          <Route path="/users" exact component = {(<h1>users page</h1>)}/>
-          <Route path="/news" exact component = {(<h1>news page</h1>)}/>
+          <Route path="/users" exact component = {UsersPage}/>
+          <Route path="/news" exact component = {NewsPage}/>
           <Route component = {NotFoundPage}/>
         </Switch>
     </div>
